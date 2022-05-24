@@ -64,35 +64,35 @@ Para fazer uma nova modificacao sera necessario criar um nova veersao.
 	
 	1. Para usar com Spring basta adicionar a dependencia no maven e o plugin (opcional) abaixo:
 	
-	```xml
-		<dependencies>
+```xml
+	<dependencies>
+		...
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
 			...
-			<dependency>
+			<plugin>
 				<groupId>org.flywaydb</groupId>
-				<artifactId>flyway-core</artifactId>
-			</dependency>
-		</dependencies>
-		<build>
-			<plugins>
-				...
-				<plugin>
-					<groupId>org.flywaydb</groupId>
-					<artifactId>flyway-maven-plugin</artifactId>
-				</plugin>
-			</plugins>
-		</build>
-	```
+				<artifactId>flyway-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+```
 
 __Observacao:__  A vantagem de usar o plugin e que nao e necessario rodar a aplicacao toda para executar migrations.
 
 	2. Faca as configuracoes convesionais de banco de dados do spring com JPA. Example no arquivo application.propeties:
 	
-	```properties
-	spring.datasource.url=jdbc:mariadb://localhost:3306/seubancodedados
-	spring.datasource.username=user
-	spring.datasource.password=user
-	spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
-	```
+```properties
+spring.datasource.url=jdbc:mariadb://localhost:3306/seubancodedados
+spring.datasource.username=user
+spring.datasource.password=user
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+```
 
 	3. Criar as migrations na pasta resources/db/migration conforme nomeclaturas mencionadas.
 
