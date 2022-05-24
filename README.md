@@ -1,3 +1,6 @@
+[Headers](#headers)  
+[Emphasis](#emphasis)
+
 # Versionamento de banco de dados na linguagem Java
 
 O versionamento de banco de dados em aplicações e importante para manter ordem e organização
@@ -10,7 +13,7 @@ permite criar rollbacks de mudanças de banco de dados.
 
 ## 1. Ferramentas:
 
-Nesse projeto, foi utilizado o Flyway, porém existem outras soluções como LiquiBase.
+Foi feito dois projetos, que foi utilizado os seguintes versionadores:
 	
 1. Documentação do Flyway: [docs](https://flywaydb.org/documentation/)
 2. Documentação do LiquiBase: [docs](https://docs.liquibase.com/home.html)
@@ -29,7 +32,6 @@ Cada novo arquivo e uma nova versão, independentimente do comando que será fei
 Os scripts devem estar em determinada pasta e com as nomeclaturas:
 
 ![Imagem com os tipos de arquivo](tipo_arquivos_migration.png)
-
 
 ## 2.1. Tipos de migrations
 
@@ -110,3 +112,7 @@ spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 4. clean - limpa todo o banco de dados.
 5. repair - repara a tabela de historico
 
+
+---
+
+###
