@@ -1,0 +1,1 @@
+ALTER TABLE livros DROP COLUMN numero_pagina;
