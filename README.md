@@ -1,7 +1,4 @@
-[Headers](#headers)  
-[Emphasis](#emphasis)
-
-# Versionamento de banco de dados na linguagem Java
+# Versionamento de banco de dados na linguagem Java {#versionamento}
 
 O versionamento de banco de dados em aplicações e importante para manter ordem e organização
 nos Scripts SQL que são executado no banco de dados. Assim, funcionando como um versionador desses
@@ -10,7 +7,6 @@ Facilitando a sincronização da versão do banco de dados com a versão da apli
 foram executados, automatizar a execução dos scripts, criar banco de dados do zero (caso necessário) e
 permite criar rollbacks de mudanças de banco de dados.
 
-
 ## 1. Ferramentas:
 
 Foi feito dois projetos, que foi utilizado os seguintes versionadores:
@@ -18,7 +14,7 @@ Foi feito dois projetos, que foi utilizado os seguintes versionadores:
 1. Documentação do Flyway: [docs](https://flywaydb.org/documentation/)
 2. Documentação do LiquiBase: [docs](https://docs.liquibase.com/home.html)
 
-## 2. Visão Geral do Flyway:
+### 2. Visão Geral do Flyway:
 	
 O Flyway e usado em aplicações Java, disponível para gerenciadores de pacote/dependencia como maven e glade.
 Possui também possui versão CLI (Command Line).
@@ -33,12 +29,12 @@ Os scripts devem estar em determinada pasta e com as nomeclaturas:
 
 ![Imagem com os tipos de arquivo](tipo_arquivos_migration.png)
 
-## 2.1. Tipos de migrations
+### 2.1. Tipos de migrations
 
 	Existem duas formas de migrations: Regular e desfazer (undo).
 	As regulares sao feitas no arquivos de que comecem com V e R, ja de desfazer e no arquivo U (disponivel apenas em versoes do Flyway Teams ou Enterprise Edition).
 
-## 2.2. Executanto migrations:
+### 2.2. Executanto migrations:
 
 O Flyway pode ser executado pela sua aplicacao (caso queira) ou pela linha de comando (instalando ele ou usando como plugin no maven)
 
@@ -62,7 +58,7 @@ Para fazer uma nova modificacao sera necessario criar um nova veersao.
 
 ---
 
-## 3. Usando Flyway com Spring Boot com JPA
+### 3. Usando Flyway com Spring Boot com JPA
 	
 	1. Para usar com Spring basta adicionar a dependencia no maven e o plugin (opcional) abaixo:
 	
@@ -104,7 +100,7 @@ spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 	
 ![exemplo migration](example-migration.png)
 
-## 4. Comandos do Flyway:
+### 4. Comandos do Flyway:
 
 1. migrate - executa os scripts que existem. Tambem faz validacao, se alguma versao foi modificada.
 2. validate - valida se alguma arquivo que ja foi migrado foi modificado e se existe migracao a ser feita.
@@ -115,4 +111,6 @@ spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 
 ---
 
-###
+## 5. Visao geral LiquiBase:
+
+	
