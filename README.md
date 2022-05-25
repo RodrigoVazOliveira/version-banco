@@ -169,8 +169,7 @@ spring.liquibase.change-log=classpath:db/changelog/changelog.sql
 
 ![Local do arquivo do changelog](changelog-file.png)
 
-
-4. criar o arquivo de properties do plugin do liquibase no resources. (liquibase.properties)
+4. Crie o arquivo de properties do plugin do Liquibase no resources. (liquibase.properties)
 
 ```properties
 url=jdbc:mariadb://localhost:3306/locadora
@@ -180,7 +179,7 @@ referenceDriver=org.mariadb.jdbc.Driver
 verbose=true
 dropFirst=false
 ```
-5. Crie alguma changeset, exemplo:
+5. Agora, crie um changeset, exemplo:
 
 ```sql
 --changeset rodrigo:1
@@ -212,6 +211,11 @@ Obtendo o resultado:
 ![resultado da migracao utilizando LiquiBase](resultado-update-liquibase.png)
 
 
+__Observacao:__ tambem e possivel rodar as migracoes apenas rodando a aplicacao Spring.
+
+```bash
+$ mvn spring-boot:run -DskipTests
+```
 ## 6. Principais comandos do LiquiBase:
 
 1. update - Para executar as migracoes (changesets) que foram incluidas no changelog
