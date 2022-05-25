@@ -113,4 +113,40 @@ spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 
 ## 5. Visao geral LiquiBase:
 
-	
+O LiquidBase suporta nao somente arquivos SQL, mas tambem YAML, XML;
+Usando o conceito de changelog e changeset, podemos definir as versoes das migracoes.
+Ele pode ser executado com plugin no Maven/Glade ou instalado na maquina via linha de comando.
+Tem suporte tambem com NoSQL.
+
+
+## 5.1. Usando LiquiBase com Spring Boot:
+
+Primeiramente, segue o link da documentacao: [Usando liquiBase com Spring Boot + Maven](https://docs.liquibase.com/tools-integrations/springboot/using-springboot-with-maven.html)
+
+1. Adicionar a dependencia do liquiBase:
+
+```xml
+	<dependencies>
+		...
+       <dependency>
+                 <groupId>org.liquibase</groupId> 
+                 <artifactId>liquibase-core</artifactId>
+       </dependency>
+```
+
+Alternativa, pode usar o [Spring initalizr](start.spring.io/)
+
+2. Adicione as configuracoes no application.properties:
+
+```properties
+spring.datasource.url=jdbc:mariadb://localhost:3306/locadora
+spring.datasource.username=locadora
+spring.datasource.password=locadora
+spring.liquibase.change-log=classpath:db/changelog/changelog.sql
+```
+
+3. crie o arquivo de changelog:
+
+![Local do arquivo do changelog](changelog-file.png)
+
+4. 
